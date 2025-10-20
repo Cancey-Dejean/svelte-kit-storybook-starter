@@ -4,11 +4,9 @@
 	import { Button } from '.';
 	import { Settings } from '@lucide/svelte';
 
-  // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
   const { Story } = defineMeta({
     title: 'Components/Button',
     component: Button,
-    tags: ['autodocs'],
     argTypes: {
       variant: {
         control: 'select',
@@ -37,11 +35,14 @@
       },
       type: {
         control: 'select',
-
         description: 'The button type attribute (only applies when not using href)',
         table: {
           defaultValue: { summary: 'button' },
         },
+      },
+      ref: {
+        control: false,
+        description: 'The ref of the button',
       },
     },
     args: {
@@ -59,9 +60,7 @@ argTypes={{
   href: {
     control: false
   },
-  ref: {
-    control: false
-  },
+
 }}
 >
   {#snippet children()}
