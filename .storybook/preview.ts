@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/sveltekit';
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 import { withThemeByClassName } from '@storybook/addon-themes';
+import '../src/styles/globals.css';
 
 const preview: Preview = {
 	parameters: {
