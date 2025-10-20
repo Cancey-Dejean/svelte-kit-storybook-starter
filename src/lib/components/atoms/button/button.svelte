@@ -1,9 +1,11 @@
+<!-- Imports -->
 <script lang="ts" module>
 	import { cn } from "$lib/utils.js";
 	import type { ButtonProps } from "./types";
 	import { buttonVariants } from "./variants";
 </script>
 
+<!-- Props -->
 <script lang="ts">
 	let {
 		class: className,
@@ -19,6 +21,7 @@
 	}: ButtonProps = $props();
 </script>
 
+<!-- Component -->
 {#if href}
 	<a
 		bind:this={ref}

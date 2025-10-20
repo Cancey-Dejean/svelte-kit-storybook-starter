@@ -1,7 +1,7 @@
 <script module>
   import { defineMeta } from '@storybook/addon-svelte-csf';
   import { fn } from 'storybook/test';
-	import { Button } from '.';
+	import { Button } from '@/lib/components/atoms/button';
 	import { Settings } from '@lucide/svelte';
 
   const { Story } = defineMeta({
@@ -32,6 +32,9 @@
       href: {
         control: 'text',
         description: 'If provided, renders as an anchor tag instead of a button',
+        table: {
+          disable: true
+        }
       },
       type: {
         control: 'select',
@@ -44,6 +47,13 @@
         control: false,
         description: 'The ref of the button',
       },
+      newTab: {
+        control: 'boolean',
+        description: 'Whether the link should open in a new tab',
+        table: {
+          disable: true
+        }
+      },
     },
     args: {
       variant: 'default',
@@ -55,45 +65,9 @@
   });
 </script>
 
-<Story name="Default" args={{ variant: 'default' }}
-argTypes={{
-  href: {
-    control: false
-  },
-}}
->
+<Story name="Default" args={{ variant: 'default' }}>
   {#snippet children()}
     Button
-  {/snippet}
-</Story>
-
-<Story name="Destructive" args={{ variant: 'destructive' }}>
-  {#snippet children()}
-    Delete
-  {/snippet}
-</Story>
-
-<Story name="Outline" args={{ variant: 'outline' }}>
-  {#snippet children()}
-    Outline
-  {/snippet}
-</Story>
-
-<Story name="Secondary" args={{ variant: 'secondary' }}>
-  {#snippet children()}
-    Secondary
-  {/snippet}
-</Story>
-
-<Story name="Ghost" args={{ variant: 'ghost' }}>
-  {#snippet children()}
-    Ghost
-  {/snippet}
-</Story>
-
-<Story name="Icon" args={{ size: 'icon', variant: 'outline' }}>
-  {#snippet children()}
-  <Settings />
   {/snippet}
 </Story>
 
@@ -103,13 +77,41 @@ argTypes={{
   {/snippet}
 </Story>
 
-<Story name="Link" args={{ variant: 'default', href: 'https://example.com', newTab: true }}>
+<Story name="Icon" args={{ size: 'icon', variant: 'default' }}>
+  {#snippet children()}
+  <Settings />
+  {/snippet}
+</Story>
+
+<Story name="Link" args={{ variant: 'default', href: 'https://example.com', newTab: true }} argTypes={{
+  href: {
+    table: {
+      disable: false
+    }
+  },
+  newTab: {
+    table: {
+      disable: false
+    }
+  },
+}}>
   {#snippet children()}
     Link
   {/snippet}
 </Story>
 
-<Story name="Link Text" args={{ href: 'https://example.com', variant: 'link', newTab: true }}>
+<Story name="Link Text" args={{ href: 'https://example.com', variant: 'link', newTab: true }} argTypes={{
+  href: {
+    table: {
+      disable: false
+    }
+  },
+  newTab: {
+    table: {
+      disable: false
+    }
+  },
+}}>
   {#snippet children()}
     Link Text
   {/snippet}

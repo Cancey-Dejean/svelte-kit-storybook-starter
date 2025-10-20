@@ -2,6 +2,7 @@
   import { defineMeta } from '@storybook/addon-svelte-csf';
   import Header from './Header.svelte';
   import { fn } from 'storybook/test';
+  import StoryWrapper from '@/lib/components/utility/story-wrapper.svelte';
 
   // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
   const { Story } = defineMeta({
@@ -21,6 +22,10 @@
   });
 </script>
 
-<Story name="Logged In" args={{ user: { name: 'Jane Doe' } }} />
+<Story name="Logged In" args={{ user: { name: 'Jane Doe' } }}>
+  <StoryWrapper />
+</Story>
 
-<Story name="Logged Out" />
+<Story name="Logged Out">
+  <StoryWrapper />
+</Story>

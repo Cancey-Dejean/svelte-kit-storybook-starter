@@ -3,8 +3,8 @@ import type {
 	 ButtonProps,
 	 ButtonSize,
 	 ButtonVariant,
-} from "./types";
-import { buttonVariants } from "./variants";
+} from "@/lib/components/atoms/button/types";
+import { buttonVariants } from "@/lib/components/atoms/button/variants";
 
 export {
 	Root,

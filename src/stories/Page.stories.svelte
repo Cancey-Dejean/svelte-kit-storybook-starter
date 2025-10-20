@@ -3,6 +3,7 @@
   import { expect, userEvent, waitFor, within } from 'storybook/test';
   import Page from './Page.svelte';
   import { fn } from 'storybook/test';
+  import StoryWrapper from '@/lib/components/utility/story-wrapper.svelte';
 
   // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
   const { Story } = defineMeta({
@@ -24,7 +25,10 @@
 
     const logoutButton = canvas.getByRole('button', { name: /Log out/i });
     await expect(logoutButton).toBeInTheDocument();
-  }}
-/>
+  }}>
+  <StoryWrapper />
+</Story>
 
-<Story name="Logged Out" />
+<Story name="Logged Out">
+  <StoryWrapper />
+</Story>
