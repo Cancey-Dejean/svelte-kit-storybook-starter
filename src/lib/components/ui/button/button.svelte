@@ -11,6 +11,7 @@
 		size = "default",
 		ref = $bindable(null),
 		href = undefined,
+		newTab = false,
 		type = "button",
 		disabled,
 		children,
@@ -28,6 +29,7 @@
 		aria-disabled={disabled}
 		role={disabled ? "link" : undefined}
 		tabindex={disabled ? -1 : undefined}
+		target={newTab ? "_blank" : "_self"}
 		{...restProps}
 	>
 		{@render children?.()}

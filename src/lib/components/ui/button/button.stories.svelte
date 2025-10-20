@@ -5,7 +5,7 @@
 	import { Settings } from '@lucide/svelte';
 
   const { Story } = defineMeta({
-    title: 'Components/Button',
+    title: 'Atoms/Button',
     component: Button,
     argTypes: {
       variant: {
@@ -60,7 +60,6 @@ argTypes={{
   href: {
     control: false
   },
-
 }}
 >
   {#snippet children()}
@@ -92,13 +91,6 @@ argTypes={{
   {/snippet}
 </Story>
 
-<Story name="Link" args={{ variant: 'link' }}>
-  {#snippet children()}
-    Link
-  {/snippet}
-</Story>
-
-
 <Story name="Icon" args={{ size: 'icon', variant: 'outline' }}>
   {#snippet children()}
   <Settings />
@@ -111,9 +103,15 @@ argTypes={{
   {/snippet}
 </Story>
 
-<Story name="As Link" args={{ href: 'https://example.com', variant: 'link' }}>
+<Story name="Link" args={{ variant: 'default', href: 'https://example.com', newTab: true }}>
   {#snippet children()}
-    Link Button
+    Link
+  {/snippet}
+</Story>
+
+<Story name="Link Text" args={{ href: 'https://example.com', variant: 'link', newTab: true }}>
+  {#snippet children()}
+    Link Text
   {/snippet}
 </Story>
 

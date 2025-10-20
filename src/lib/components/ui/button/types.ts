@@ -10,4 +10,5 @@ export type ButtonVariant = VariantProps<typeof buttonVariants>["variant"];
 		WithElementRef<HTMLAnchorAttributes> & {
 			variant?: ButtonVariant;
 			size?: ButtonSize;
+			newTab?: boolean;
 		};
