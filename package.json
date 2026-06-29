@@ -19,7 +19,7 @@
 		"@chromatic-com/storybook": "^5.2.1",
 		"@eslint/compat": "^2.1.0",
 		"@eslint/js": "^10.0.1",
-		"@lucide/svelte": "^0.546.0",
+		"@lucide/svelte": "^1.22.0",
 		"@storybook/addon-a11y": "^10.4.6",
 		"@storybook/addon-docs": "^10.4.6",
 		"@storybook/addon-links": "^10.4.6",
